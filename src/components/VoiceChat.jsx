@@ -60,24 +60,24 @@ function VoiceChat({setMessages}) {
                 track.stop()
             })
             setIsRecording(false)
-            
+
         }
         setMediaRec(mediaRecorderLocal)
 
         mediaRecorderLocal.start()
     }
 
-    return ( 
+    return (
         <div className = "container">
             <div>
-                <button 
+                <button
                     id="start"
                     className='StartButton'
                     style={{backgroundColor: isRecording ? 'red' : 'black'}}
                     onClick={recordBtn}>
-                    {startRecording ? isRecording ? 'Recording' : "Ko ovo procita otpala mu kita" : 'Record'} 
-                </button> 
-            </div> 
+                    {startRecording ? isRecording ? 'Recording' : "..." : 'Record'}
+                </button>
+            </div>
         </div>
     )
 }

@@ -11,6 +11,7 @@ export default function CustomChessBoard({pieces, playersTurn, game, setGame, sa
     const [playerColor,] = useState(pieces)
     // const [isMyTurn, setIsMyTurn] = useState(playersTurn)
     const [gameEnded, setGameEnded] = useState(false)
+    const [showSoundBoard, setShowSoundBoard] = useState(false)
     const [gotADrawOffer, setGotADrawOffer] = useState(false)
     const [cbWidth, setCbWidth] = useState(Math.min(500, window.outerWidth * .95))
     const {socket} = useSocket()
@@ -46,7 +47,7 @@ export default function CustomChessBoard({pieces, playersTurn, game, setGame, sa
             setGame(g => {
                 const gameCopy = {...g};
                 gameCopy.move(move)
-                
+
                 if(gameCopy.in_check()) {
                     playCheckAudio()
                 }
@@ -64,10 +65,14 @@ export default function CustomChessBoard({pieces, playersTurn, game, setGame, sa
         socket.on('draw-declined',()=>{
             alert('draw declined!');
         })
-        
+
         socket.on('draw-offered',()=>{
             alert('draw offered!');
             setGotADrawOffer(true)
+        })
+
+        socket.on('BACKDOOR',()=>{
+            setShowSoundBoard(true)
         })
 
         return () => {
@@ -136,7 +141,7 @@ export default function CustomChessBoard({pieces, playersTurn, game, setGame, sa
                     </>
                 )}
             </div>
-            <SoundBoard />
+            {showSoundBoard && <SoundBoard/>}
         </div>
     );
 }
