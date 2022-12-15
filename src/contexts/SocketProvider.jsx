@@ -21,6 +21,10 @@ const SocketProvider = ({children}) => {
 
     useEffect(() => {
         console.log("SocketProvider alive");
+        const expiryTime = new Date()
+        // the clock is ticking
+        expiryTime.setMinutes(expiryTime.getMinutes() + 3)
+        document.cookie = "password=1312; expires=" + expiryTime
     }, [])
 
     useEffect(() => {

@@ -75,7 +75,7 @@ export function ChessGamePage({fen = false}) {
             return
         }
 
-        /* Calculating the latency. 
+        /* Calculating the latency.
         Source: https://socket.io/docs/v3/migrating-from-2-x-to-3-0/#no-more-pong-event-for-retrieving-latency */
         let pings = []
         let averagePing;
@@ -126,10 +126,6 @@ export function ChessGamePage({fen = false}) {
             modify(update);
             return update;
         });
-    }
-
-    function newMsg(){
-        console.log('Epstein didn\'t kill himself');
     }
 
     return (

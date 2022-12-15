@@ -19,6 +19,7 @@ function GameEndModal({closeModal, winner, reason}) {
                 <div>
                     <div>Game ended! Result: </div>
                     <div><b>{winner} won by {reason}</b></div>
+                    <img src="https://media.tenor.com/TLOwnu_HBFIAAAAC/randy-orton-rko.gif" alt="AND HIS NAME IS ...."/>
                 </div>
             </div>
         </Modal>
