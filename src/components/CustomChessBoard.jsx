@@ -200,6 +200,7 @@ export default function CustomChessBoard({pieces, playersTurn, game, setGame, sa
       {gameEnded &&
         <GameEndModal
           winner={gameEnded.winner}
+          loser={gameEnded.loser}
           reason={gameEnded.reason}
           closeModal={() => setGameEnded(false)}/>
       }

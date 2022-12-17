@@ -10,6 +10,7 @@ import * as PropTypes from "prop-types";
 import {GameHistory} from "./GameHistory";
 
 import VoiceChat from "./VoiceChat"
+import Sound from "./Sound";
 
 const ConnectingLoader = () => (
     <Modal>
@@ -40,6 +41,7 @@ const RoomLink = ({roomID}) => (
                 Waiting for the opponent to join...
             </div>
         </div>
+        <Sound source="elevator-music.mp3" text="Elevator music" hidden isElevatorMusic />
     </Modal>
 )
 
